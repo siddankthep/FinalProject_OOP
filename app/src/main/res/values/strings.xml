@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">FInal Project_OOP</string>
+    <string name="welcome">Welcome!</string>
+    <string name="please">Please sign in to continue!</string>
+    <string name="sign_in">Sign in</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="create">Create a new account</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone number</string>
+<!--    <string name="">Create</string>-->
 </resources>
