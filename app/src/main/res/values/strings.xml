@@ -3,7 +3,7 @@
     <string name="welcome">Welcome!</string>
     <string name="please">Please sign in to continue!</string>
     <string name="sign_in">Sign in</string>
-    <string name="register">Register</string>
+    <string name="create_button">Create</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="create">Create a new account</string>
@@ -58,5 +58,9 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="appointDetail">Information</string>
+    <string name="reason">Please state the reason for the appointment</string>
+    <string name="chooseDoctor">Please choose a doctor for your appointment</string>
+    <string name="chooseTime">Please choose a date and time for your appointment</string>
+    <string name="phone_num">Username (phone)</string>
     <!--    <string name="">Create</string>-->
 </resources>
