@@ -62,5 +62,17 @@
     <string name="chooseDoctor">Please choose a doctor for your appointment</string>
     <string name="chooseTime">Please choose a date and time for your appointment</string>
     <string name="phone_num">Username (phone)</string>
+    <string name="appointment_list">Upcoming Appointments</string>
+    <string name="back_description">Back to previous activity</string>
+    <string name="diag_prescript">Diagnosis and Prescription</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="prescription">Prescription</string>
+    <string name="save">Save</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="patient_info">Patient Information</string>
+    <string name="weight">Weight</string>
+    <string name="blood_press">Blood Pressure</string>
+    <string name="reason2">Reason for appointment</string>
     <!--    <string name="">Create</string>-->
 </resources>
