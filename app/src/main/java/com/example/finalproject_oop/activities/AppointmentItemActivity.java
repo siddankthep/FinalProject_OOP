@@ -1,8 +1,10 @@
-package com.example.finalproject_oop;
+package com.example.finalproject_oop.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.finalproject_oop.R;
 
 public class AppointmentItemActivity extends AppCompatActivity {
 
