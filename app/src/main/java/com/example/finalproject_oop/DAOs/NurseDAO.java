@@ -16,6 +16,9 @@ public interface NurseDAO {
     @Query("SELECT * FROM nurse WHERE phoneNumber = :phoneNumber")
     Nurse getNurseByPhoneNumber(String phoneNumber);
 
+    @Query("SELECT * FROM nurse WHERE id = :id")
+    Nurse getNurseByID(int id);
+
     // You may add more queries for different operations
 }
 

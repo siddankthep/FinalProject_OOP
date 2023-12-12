@@ -16,5 +16,13 @@ public interface PatientDAO {
     @Query("SELECT * FROM patient WHERE phoneNumber = :phoneNumber")
     Patient getPatientByPhoneNumber(String phoneNumber);
 
+    @Query("SELECT * FROM patient WHERE firstName = :firstName")
+    Patient getPatientByFirstName(String firstName);
+
+    @Query("SELECT * FROM patient WHERE lastName = :lastName")
+    Patient getPatientByLastName(String lastName);
+
+    @Query("SELECT * FROM patient WHERE id = :id")
+    Patient getPatientByID(int id);
     // You may add more queries for different operations
 }
