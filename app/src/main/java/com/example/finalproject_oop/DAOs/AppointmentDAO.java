@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+
 import com.example.finalproject_oop.data_class.Appointment;
 
 import java.util.List;
@@ -11,10 +12,22 @@ import java.util.List;
 @Dao
 public interface AppointmentDAO {
     @Insert
-    void insertAppointment(Appointment Appointment);
+    void addAppointment(Appointment a1);
 
-    @Query("SELECT * FROM appointment WHERE id = id")
+
+    // You may add more queries for different operation
+    @Query("select * from a1 where id = :id")
     Appointment getAppointmentByID(int id);
 
-    // You may add more queries for different operations
+    @Query("select * from a1 where date = :date")
+    Appointment getAppointmentByDate(String date);
+
+    @Query("select * from a1 where time = :time")
+    Appointment getAppointmentByTime(String time);
+
+
+
+
+
+
 }

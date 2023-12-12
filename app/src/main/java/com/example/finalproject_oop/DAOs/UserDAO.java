@@ -16,6 +16,11 @@ public interface UserDAO {
     @Query("SELECT * FROM user WHERE phoneNumber = :phoneNumber")
     User getUserByPhoneNumber(String phoneNumber);
 
+    @Query("SELECT * FROM user WHERE id = :id")
+    User getUserByID(int id);
+
+
+
     // You may add more queries for different operations
 }
 
