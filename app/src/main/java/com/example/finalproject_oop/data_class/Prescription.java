@@ -3,7 +3,7 @@ package com.example.finalproject_oop.data_class;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity{tableName = "prescription"}
+@Entity
 public class Prescription {
 
     @PrimaryKey(autoGenerate = true)
