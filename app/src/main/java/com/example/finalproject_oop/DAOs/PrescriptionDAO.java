@@ -13,8 +13,8 @@ public interface PrescriptionDAO {
     @Insert
     void insertPrescription(Prescription prescription);
 
-    @Query("SELECT * FROM prescription WHERE username = :username")
-    List<Prescription> getPrescriptionsForPatient(String username);
+    @Query("SELECT * FROM prescription")
+    List<Prescription> getAllPrescriptions();
 
     // You may add more queries for different operations
 }

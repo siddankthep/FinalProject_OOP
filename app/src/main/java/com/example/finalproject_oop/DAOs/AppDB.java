@@ -20,6 +20,7 @@ public abstract class AppDB extends RoomDatabase {
     public abstract PrescriptionDAO prescriptionDAO();
 
 
+
     // You can include other DAOs if needed
 }
 
