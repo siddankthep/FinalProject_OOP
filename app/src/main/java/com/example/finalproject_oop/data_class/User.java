@@ -3,11 +3,10 @@ package com.example.finalproject_oop.data_class;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
 public abstract class User {
-    @PrimaryKey(autoGenerate = true)
     private int ID;
     private String phoneNumber;
+
     private String password;
 
     public User(int ID, String phoneNumber, String password) {
@@ -17,7 +16,9 @@ public abstract class User {
     }
 
     // Getters and setters for phoneNumber and password
-
+    public int getID() {
+        return ID;
+    }
     public String getPhoneNumber() {
         return phoneNumber;
     }

@@ -13,7 +13,7 @@ public interface AppointmentDAO {
     @Insert
     void insertAppointment(Appointment Appointment);
 
-    @Query("SELECT * FROM appointment WHERE id = id")
+    @Query("SELECT * FROM appointment WHERE id = :id")
     Appointment getAppointmentByID(int id);
 
     // You may add more queries for different operations
