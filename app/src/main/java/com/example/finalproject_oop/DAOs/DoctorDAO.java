@@ -19,7 +19,7 @@ public interface DoctorDAO {
     Doctor getDoctorByPhoneNumber(String phoneNumber);
 
     @Query("SELECT * FROM doctor WHERE  appointments =:appointment")
-    Doctor getDoctorByAppointments(Appointment appointment);
+    Doctor getDoctorByAppointments(List<Appointment> appointment);
 
     // You may add more queries for different operations
 }

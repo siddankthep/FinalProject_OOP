@@ -32,9 +32,11 @@ android {
 }
 
 dependencies {
+    implementation ("com.google.code.gson:gson:2.8.8")
+
     val room_version = "2.6.1"
-    implementation("android.arch.persistence.room:runtime:2.6.1")
-    annotationProcessor("android.arch.persistence.room:compiler:2.6.1")
+//    implementation("android.arch.persistence.room:runtime:2.6.1")
+//    annotationProcessor("android.arch.persistence.room:compiler:2.6.1")
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
 

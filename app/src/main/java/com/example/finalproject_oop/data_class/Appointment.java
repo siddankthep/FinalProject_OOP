@@ -11,6 +11,15 @@ public class Appointment {
     private String time;
     private Doctor doctor;
     private Patient patient;
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
     public String getDate() {
         return date;
     }
