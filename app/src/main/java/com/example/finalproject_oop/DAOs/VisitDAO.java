@@ -1,11 +1,13 @@
 package com.example.finalproject_oop.DAOs;
 
-import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import com.example.finalproject_oop.data_class.Patient;
 import com.example.finalproject_oop.data_class.Visit;
-@Dao
+import com.example.finalproject_oop.data_class.Doctor;
+
+
 public interface VisitDAO {
 
     @Insert
@@ -13,6 +15,18 @@ public interface VisitDAO {
 
     @Query("SELECT * FROM visit")
     Visit[] getAll();
+
+    @Query("select * from visit where doctor =:doctor")
+    Visit getVisitByDoctor(Doctor doctor);
+
+    @Query("select * from visit where patient =:patient")
+    Visit getVisitByPatient(Patient patient);
+
+
+
+
+
+
 
     // More queries can be added here
 }
