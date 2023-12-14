@@ -7,14 +7,12 @@
     tools:context=".activities.MainActivity">
 
 
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_centerInParent="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/addProfile"
         android:onClick="onProfileImageClick"
         android:src="@drawable/default_profile"
@@ -22,36 +20,37 @@
         app:civ_border_overlay="true"
         app:civ_border_width="2dp"
         app:civ_circle_background_color="#CCCCCC"
-        app:layout_constraintBottom_toBottomOf="@+id/lastNameEditText"
-        app:layout_constraintEnd_toStartOf="@+id/firstNameEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/firstNameEditText" />
-
-    <EditText
-        android:id="@+id/firstNameEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="@string/first_name"
-        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
 
     <EditText
+        android:id="@+id/firstNameEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="@string/first_name"
+        android:inputType="text"
+        android:text="Patient first name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+    <EditText
         android:id="@+id/lastNameEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="@string/last_name"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Patient last name"
+        app:layout_constraintEnd_toEndOf="@+id/firstNameEditText"
         app:layout_constraintStart_toStartOf="@+id/firstNameEditText"
         app:layout_constraintTop_toBottomOf="@+id/firstNameEditText" />
 
@@ -59,45 +58,42 @@
         android:id="@+id/addressEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="@string/address"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Patient address"
+        app:layout_constraintEnd_toEndOf="@+id/lastNameEditText"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/lastNameEditText"
         app:layout_constraintTop_toBottomOf="@+id/ageEditText" />
 
     <EditText
         android:id="@+id/ageEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="@string/age"
+        android:hint="Age"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Patient age"
+        app:layout_constraintEnd_toEndOf="@+id/lastNameEditText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/lastNameEditText"
         app:layout_constraintTop_toBottomOf="@+id/lastNameEditText" />
 
     <EditText
         android:id="@+id/phoneNumEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="@string/phone"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="text"
+        android:text="Patient phone"
+        app:layout_constraintEnd_toEndOf="@+id/addressEditText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/addressEditText"
         app:layout_constraintTop_toBottomOf="@+id/addressEditText" />
 
     <Button
@@ -105,22 +101,11 @@
         android:layout_width="112dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/create_button"
+        android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phoneNumEditText" />
-
-    <ImageView
-        android:id="@+id/addProfile"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_alignEnd="@id/profile_image"
-        android:layout_alignBottom="@id/profile_image"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
-        app:layout_constraintEnd_toEndOf="@+id/profile_image"
-        app:srcCompat="@drawable/add_profile" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -144,7 +129,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintStart_toEndOf="@+id/appointBack"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        tools:text="@string/create" />
+        tools:text="Update Personal Information" />
 
     <ImageView
         android:id="@+id/appointBack"

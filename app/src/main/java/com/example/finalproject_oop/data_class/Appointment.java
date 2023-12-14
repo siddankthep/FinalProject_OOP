@@ -1,24 +1,23 @@
 package com.example.finalproject_oop.data_class;
-
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "a1")
 public class Appointment {
     @PrimaryKey(autoGenerate = true)
-    public int ID;
+    private int ID;
+    private String sympton;
     private String date;
     private String time;
     private Doctor doctor;
     private Patient patient;
-    private String reason;
 
-    public Appointment(String date, String time, Doctor doctor, Patient patient, String reason) {
-        this.date = date;
-        this.time = time;
-        this.doctor = doctor;
-        this.patient = patient;
-        this.reason = reason;
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getDate() {
@@ -53,11 +52,11 @@ public class Appointment {
         this.patient = patient;
     }
 
-    public String getReason() {
-        return reason;
+    public String getSympton() {
+        return sympton;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setSympton(String reason) {
+        this.sympton = sympton;
     }
 }
