@@ -3,6 +3,9 @@ plugins {
 }
 
 android {
+    buildFeatures{
+        viewBinding = true;
+    }
     namespace = "com.example.finalproject_oop"
     compileSdk = 34
 
