@@ -6,17 +6,15 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.example.finalproject_oop.R;
+import com.example.finalproject_oop.databinding.ActivityPersonalInfoBinding;
 
 public class PersonalInfo extends AppCompatActivity {
-    ImageView backButton;
-
+    ActivityPersonalInfoBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal_info);
-
-        backButton = findViewById(R.id.backButton);
-
+        binding = ActivityPersonalInfoBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
     }
 }

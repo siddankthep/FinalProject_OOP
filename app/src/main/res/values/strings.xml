@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FInal Project_OOP</string>
+    <string name="app_name">Hospital</string>
     <string name="welcome">Welcome!</string>
     <string name="please">Please sign in to continue!</string>
     <string name="sign_in">Sign in</string>
@@ -50,5 +50,7 @@
     <string name="weight_in_kg">Weight in kg</string>
     <string name="name">Name</string>
     <string name="hospital">Hospital</string>
+    <string name="navigation_drawer_open">Open navigation</string>
+    <string name="navigation_drawer_close">Close navigation</string>
     <!--    <string name="">Create</string>-->
 </resources>

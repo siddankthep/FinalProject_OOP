@@ -20,5 +20,8 @@ public interface NurseDAO {
     Nurse getNurseByID(int id);
 
     // You may add more queries for different operations
+
+    @Query("SELECT DISTINCT * FROM nurse WHERE phoneNumber = :username AND password = :password")
+    Nurse getNurseByLogIn(String username, String password);
 }
 

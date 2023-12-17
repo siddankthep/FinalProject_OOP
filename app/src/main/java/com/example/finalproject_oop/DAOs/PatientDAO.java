@@ -1,10 +1,15 @@
 package com.example.finalproject_oop.DAOs;
 
+import android.graphics.Paint;
+
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import com.example.finalproject_oop.data_class.Nurse;
 import com.example.finalproject_oop.data_class.Patient;
+
+import java.util.List;
 
 //import java.util.List;
 
@@ -25,4 +30,8 @@ public interface PatientDAO {
     @Query("SELECT * FROM patient WHERE id = :id")
     Patient getPatientByID(int id);
     // You may add more queries for different operations
+    @Query("SELECT DISTINCT * FROM patient WHERE phoneNumber = :username AND password = :password")
+    Patient getPatientByLogIn(String username, String password);
+    @Query("SELECT * FROM patient")
+    List<Patient> getAllPatient();
 }

@@ -20,12 +20,13 @@ import com.example.finalproject_oop.data_class.Visit;
 public abstract class AppDB extends RoomDatabase {
 
     private static volatile AppDB INSTANCE;
-    static AppDB getINSTANCE(Context context){
+    public static AppDB getINSTANCE(Context context){
         if(INSTANCE == null){
             synchronized (AppDB.class){
                 if(INSTANCE == null){
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext()
-                            ,AppDB.class,"Hospital DB").build();
+                            ,AppDB.class,"Hospital DB").allowMainThreadQueries().build();
+                    INSTANCE.nurseDAO().insertNurse(new Nurse(0,"admin","12345","Admin","",0,""));
                 }
             }
         }

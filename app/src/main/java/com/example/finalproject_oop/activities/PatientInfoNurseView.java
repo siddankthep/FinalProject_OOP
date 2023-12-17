@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.finalproject_oop.R;
+import com.example.finalproject_oop.databinding.ActivityPatientInfoNurseViewBinding;
 
 public class PatientInfoNurseView extends AppCompatActivity {
-
+    ActivityPatientInfoNurseViewBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient_info_nurse_view);
+        binding = ActivityPatientInfoNurseViewBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
     }
 }

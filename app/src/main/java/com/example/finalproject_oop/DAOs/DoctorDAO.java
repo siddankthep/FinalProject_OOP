@@ -6,6 +6,7 @@ import androidx.room.Query;
 
 import com.example.finalproject_oop.data_class.Appointment;
 import com.example.finalproject_oop.data_class.Doctor;
+import com.example.finalproject_oop.data_class.Nurse;
 import com.example.finalproject_oop.data_class.Patient;
 
 import java.util.List;
@@ -22,4 +23,6 @@ public interface DoctorDAO {
     Doctor getDoctorByAppointments(List<Appointment> appointment);
 
     // You may add more queries for different operations
+    @Query("SELECT DISTINCT * FROM doctor WHERE phoneNumber = :username AND password = :password")
+    Doctor getDoctorByLogIn(String username, String password);
 }
