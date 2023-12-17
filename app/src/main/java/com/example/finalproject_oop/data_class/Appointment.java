@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 public class Appointment {
     @PrimaryKey(autoGenerate = true)
     private int ID;
-    private String sympton;
+    private String symptom;
     private String date;
     private String time;
     private Doctor doctor;
@@ -52,11 +52,11 @@ public class Appointment {
         this.patient = patient;
     }
 
-    public String getSympton() {
-        return sympton;
+    public String getSymptom() {
+        return symptom;
     }
 
-    public void setSympton(String reason) {
-        this.sympton = sympton;
+    public void setSymptom(String symptom) {
+        this.symptom = symptom;
     }
 }

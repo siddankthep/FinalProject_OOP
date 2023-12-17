@@ -19,9 +19,9 @@ public class Patient extends User {
     private List<Appointment> appointments;
     private List<Visit> visits;
 
-    public Patient(int ID, String phoneNumber, String password, String firstName, String lastName,
+    public Patient(String phoneNumber, String password, String firstName, String lastName,
                    int age, String address) {
-        super(ID, phoneNumber, password);
+        super(phoneNumber, password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;

@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int id = AppDB.getINSTANCE(binding.getRoot().getContext()).patientDAO().getAllPatient().size()+1;
-                Patient patient = new Patient(id,binding.phoneNumEditText.getText().toString(),"123456"
+                Patient patient = new Patient(binding.phoneNumEditText.getText().toString(),"123456"
                         ,binding.firstNameEditText.getText().toString()
                         ,binding.lastNameEditText.getText().toString()
                         ,Integer.parseInt(binding.ageEditText.getText().toString())

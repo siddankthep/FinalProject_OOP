@@ -26,7 +26,7 @@ public abstract class AppDB extends RoomDatabase {
                 if(INSTANCE == null){
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext()
                             ,AppDB.class,"Hospital DB").allowMainThreadQueries().build();
-                    INSTANCE.nurseDAO().insertNurse(new Nurse(0,"admin","12345","Admin","",0,""));
+                    INSTANCE.nurseDAO().insertNurse(new Nurse("admin","12345","Admin","",0,""));
                 }
             }
         }

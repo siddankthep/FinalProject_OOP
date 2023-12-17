@@ -34,12 +34,13 @@ public class Nurse extends User {
         return address;
     }
 
-    public Nurse(int ID, String phoneNumber, String password, String firstName, String lastName,
+    public Nurse(String phoneNumber,String password, String firstName, String lastName,
                  int age, String address) {
-        super(ID, phoneNumber, password);
+        super(phoneNumber, password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.address = address;
     }
+
 }

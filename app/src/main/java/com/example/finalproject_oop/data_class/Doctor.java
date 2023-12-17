@@ -13,8 +13,8 @@ public class Doctor extends User {
 
     private List<Appointment> appointments;
 
-    public Doctor(int ID, String phoneNumber, String password) {
-        super(ID, phoneNumber, password);
+    public Doctor(String phoneNumber, String password) {
+        super(phoneNumber, password);
         this.appointments = new ArrayList<>();
     }
 
