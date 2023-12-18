@@ -1,5 +1,6 @@
 package com.example.finalproject_oop.data_class;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -41,5 +42,11 @@ public class Nurse extends User {
         this.lastName = lastName;
         this.age = age;
         this.address = address;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return ID+"|"+firstName +" " + lastName + "|"+age+"|"+getPhoneNumber();
     }
 }

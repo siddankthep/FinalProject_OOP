@@ -34,4 +34,7 @@ public interface PatientDAO {
     Patient getPatientByLogIn(String username, String password);
     @Query("SELECT * FROM patient")
     List<Patient> getAllPatient();
+
+    @Query("UPDATE patient SET firstName = :fName, lastName = :lName, phoneNumber = :phone, address = :address, age = :age WHERE ID = :id")
+    void updatePatientById(int id, String fName, String lName, String phone, String address, int age);
 }

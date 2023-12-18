@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent receive = getIntent();
         String username = receive.getStringExtra("USR");
         String password = receive.getStringExtra("PASS");
+        int id = receive.getIntExtra("ID",-1);
         if (username != null) {
             int res = logInResult(username, password);
             if (res != -1){
@@ -48,6 +50,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             if (res == 0){
                 binding.addPatient.setVisibility(View.INVISIBLE);
             }
+            Log.d("Checking", AppDB.getINSTANCE(this).nurseDAO().getAllNurse().toString());
+        } else if (id != - 1) {
+            nurse = AppDB.getINSTANCE(this).nurseDAO().getNurseByID(id);
+            patient = AppDB.getINSTANCE(this).patientDAO().getPatientByID(id);
+            doctor = AppDB.getINSTANCE(this).doctorDAO().getDoctorByID(id);
+        } else if (username == null && id == -1) {
+            binding.loginButton.setVisibility(View.VISIBLE);
+            binding.fourActivity.setVisibility(View.INVISIBLE);
         }
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,9 +78,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         binding.appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                intent.putExtra("ID", getUserID());
-                MainActivity.this.startActivity(intent);
+                if (patient != null){
+                    Intent intent = new Intent(MainActivity.this, AppointmentItemActivity.class);
+                    intent.putExtra("ID", getUserID());
+                    MainActivity.this.startActivity(intent);
+                }else if (nurse != null){
+                    Intent intent = new Intent(MainActivity.this, PatientInfoNurseView.class);
+                    intent.putExtra("ID", getUserID());
+                    MainActivity.this.startActivity(intent);
+                }
             }
         });
     }
@@ -114,8 +130,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(MainActivity.this, PersonalInfo.class);
             intent.putExtra("ID", getUserID());
             MainActivity.this.startActivity(intent);
-        }else{
-
+        }else if(item.getItemId() == R.id.nav_logout){
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            MainActivity.this.startActivity(intent);
         }
         return true;
     }

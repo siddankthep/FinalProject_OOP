@@ -25,7 +25,8 @@ public interface AppointmentDAO {
     @Query("select * from a1 where time = :time")
     Appointment getAppointmentByTime(String time);
 
-
+    @Query("select * from a1 limit 1")
+    Appointment getAppointment();
 
 
 

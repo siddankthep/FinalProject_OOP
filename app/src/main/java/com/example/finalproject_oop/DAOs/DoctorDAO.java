@@ -19,8 +19,14 @@ public interface DoctorDAO {
     @Query("SELECT * FROM doctor WHERE phoneNumber = :phoneNumber")
     Doctor getDoctorByPhoneNumber(String phoneNumber);
 
-    @Query("SELECT * FROM doctor WHERE  appointments =:appointment")
+    @Query("SELECT * FROM doctor WHERE appointments =:appointment")
     Doctor getDoctorByAppointments(List<Appointment> appointment);
+
+    @Query("SELECT * FROM doctor WHERE ID =:id")
+    Doctor getDoctorByID(int id);
+
+    @Query("SELECT * FROM doctor")
+    List<Doctor> getAllDoctor();
 
     // You may add more queries for different operations
     @Query("SELECT DISTINCT * FROM doctor WHERE phoneNumber = :username AND password = :password")
