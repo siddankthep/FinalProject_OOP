@@ -10,12 +10,14 @@ import java.util.List;
 public class Doctor extends User {
     @PrimaryKey(autoGenerate = true)
     private int ID;
-
+    private String firstName, lastName;
     private List<Appointment> appointments;
 
-    public Doctor(int ID, String phoneNumber, String password) {
+    public Doctor(int ID, String phoneNumber, String password, String firstName, String lastName) {
         super(ID, phoneNumber, password);
         this.appointments = new ArrayList<>();
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     // Getter and setter for specialization
@@ -26,6 +28,14 @@ public class Doctor extends User {
 
     public void setID(int ID) {
         this.ID = ID;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public List<Appointment> getAppointments() {

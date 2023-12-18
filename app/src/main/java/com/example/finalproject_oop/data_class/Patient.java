@@ -1,5 +1,6 @@
 package com.example.finalproject_oop.data_class;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -14,7 +15,7 @@ public class Patient extends User {
     private String lastName;
     private int age;
     private String address;
-
+    private String profileImageLink;
     private List<Appointment> appointments;
     private List<Visit> visits;
 
@@ -37,6 +38,10 @@ public class Patient extends User {
         this.ID = ID;
     }
 
+    public void setProfileImageLink(String profileImageLink) {
+        this.profileImageLink = profileImageLink;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -55,6 +60,10 @@ public class Patient extends User {
 
     public int getAge() {
         return age;
+    }
+
+    public String getProfileImageLink() {
+        return profileImageLink;
     }
 
     public void setAge(int age) {
@@ -83,5 +92,11 @@ public class Patient extends User {
 
     public void setVisits(List<Visit> visits) {
         this.visits = visits;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return ID+"|"+firstName +" " + lastName + "|"+age+"|"+getPhoneNumber();
     }
 }

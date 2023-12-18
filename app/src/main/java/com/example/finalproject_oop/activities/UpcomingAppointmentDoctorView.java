@@ -7,9 +7,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.finalproject_oop.R;
+import com.example.finalproject_oop.databinding.ActivityUpcomingAppointmentDoctorViewBinding;
 
 public class UpcomingAppointmentDoctorView extends AppCompatActivity {
-
+    ActivityUpcomingAppointmentDoctorViewBinding binding;
     String[] appointments
             = { "Sid", "Huy",
             "Phuong"};
@@ -18,7 +19,8 @@ public class UpcomingAppointmentDoctorView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upcoming_appointment_doctor_view);
+        binding = ActivityUpcomingAppointmentDoctorViewBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         ListView l = findViewById(R.id.appointmentList);
         ArrayAdapter<String> arr;
         arr
